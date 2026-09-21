@@ -1,0 +1,51 @@
+:root {
+  --ink: #251a12;
+  --ink-soft: #6e5c4f;
+  --muted: #6e5c4f;
+  --paper: #f6efe3;
+  --paper-deep: #ead7bb;
+  --surface: #fffaf2;
+  --line: #d7c1a6;
+  --accent: #11d9e7;
+  --accent-dark: #087b83;
+  --warm: #b95c32;
+  --dark: #1b2118;
+  --ok: #2e7657;
+  --shadow: 0 18px 42px rgba(55, 35, 20, .13);
+  --focus-ring: #087b83;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 7%, rgba(185, 92, 50, .07), transparent 24rem),
+    linear-gradient(180deg, #fbf6ed 0, var(--paper) 36rem);
+}
+
+.demo-strip {
+  background: var(--dark);
+  color: var(--accent);
+}
+
+.brand-mark {
+  border-radius: 14px;
+  background: var(--dark);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --ink-soft: #493b31;
+    --muted: #493b31;
+    --line: #8c725c;
+  }
+}

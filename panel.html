@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#13100d">
+  <meta name="description" content="Panel operativo demostrativo para pedidos y solicitudes por mesa.">
+  <title>La Posta del Valle · Panel demo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313100d'/%3E%3Cpath d='M16 18h32v6H16zm4 11h24l-3 20H23z' fill='%2311d9e7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="panel.css?v=20260916c">
+  <link rel="stylesheet" href="experience-widgets.css?v=20260918b">
+  <link rel="stylesheet" href="brand-foundation.css?v=20260918a">
+  <link rel="stylesheet" href="accessibility-bar.css?v=20260921a">
+</head>
+<body data-page="team">
+  <div class="demo-strip">PANEL DEMOSTRATIVO · NO RECIBE PEDIDOS REALES</div>
+  <header class="panel-topbar">
+    <a class="brand" href="carta.html?mesa=07" aria-label="Volver a la carta de cliente">
+      <span class="brand-mark" aria-hidden="true" data-config="identity.mark">LP</span>
+      <span><strong data-config="identity.primaryName">La Posta</strong><small>Panel del equipo</small></span>
+    </a>
+    <div class="topbar-links">
+      <a class="customer-link" href="configuracion.html">QR de mesas</a>
+      <a class="customer-link" href="dueno.html">Panel del dueño</a>
+      <a class="customer-link" href="carta.html?mesa=07">Ver carta del cliente</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard-heading" aria-labelledby="dashboard-title">
+      <div>
+        <p class="eyebrow">Panel del mozo · datos simulados</p>
+        <h1 id="dashboard-title">Sala en vivo</h1>
+        <p>Pedidos y llamados ordenados para que el equipo sepa qué atender ahora.</p>
+      </div>
+      <div class="live-chip"><span aria-hidden="true"></span> Demo activa</div>
+    </section>
+
+    <section class="tables-card" aria-labelledby="tables-title">
+      <div class="card-heading">
+        <div><p class="eyebrow">Vista rápida</p><h2 id="tables-title">Mesas</h2></div>
+        <div class="legend"><span><i class="free"></i>Libre</span><span><i class="occupied"></i>Con pedido</span><span><i class="attention"></i>Necesita atención</span></div>
+      </div>
+      <div class="tables-grid">
+        <article class="table-tile free"><strong>01</strong><span>Libre</span></article>
+        <article class="table-tile occupied"><strong>02</strong><span>Pedido listo</span></article>
+        <article class="table-tile attention"><strong>03</strong><span>Pidió asistencia</span></article>
+        <article class="table-tile occupied"><strong>04</strong><span>En cocina</span></article>
+        <article class="table-tile free"><strong>05</strong><span>Libre</span></article>
+        <article class="table-tile occupied"><strong>06</strong><span>Eligiendo</span></article>
+        <article class="table-tile attention"><strong>07</strong><span>Pidió la cuenta</span></article>
+        <article class="table-tile occupied"><strong>09</strong><span>En cocina · alergia</span></article>
+      </div>
+    </section>
+
+    <section class="shared-account-card" aria-labelledby="shared-account-title">
+      <div class="shared-account-heading">
+        <div>
+          <p class="eyebrow">Mesa compartida destacada</p>
+          <h2 id="shared-account-title">Mesa 07 · 3 comensales</h2>
+          <p>Cada consumo está atribuido. El grupo todavía puede cerrar por persona, en partes iguales o como una sola cuenta.</p>
+        </div>
+        <span class="account-total">Total mesa <strong>$47.100</strong></span>
+      </div>
+      <div class="diner-account-grid">
+        <article><span class="diner-avatar">JR</span><div><strong>José</strong><small>Hamburguesa · limonada</small></div><b>$16.700</b><button type="button" class="account-ready">Marcar lista</button></article>
+        <article><span class="diner-avatar">AN</span><div><strong>Ana</strong><small>Locro · empanada</small></div><b>$11.000</b><button type="button" class="account-ready">Marcar lista</button></article>
+        <article><span class="diner-avatar">LU</span><div><strong>Lucas</strong><small>Mini milanesa</small></div><b>$7.600</b><button type="button" class="account-ready">Marcar lista</button></article>
+        <article class="shared-products"><span class="diner-avatar">+</span><div><strong>Productos compartidos</strong><small>Picada para la mesa</small></div><b>$11.800</b><button type="button" class="account-ready">Asignar</button></article>
+      </div>
+      <div class="account-actions">
+        <span id="account-state">Cuentas abiertas · demostración</span>
+        <button type="button" data-account-mode="individual">Preparar cuentas individuales</button>
+        <button type="button" data-account-mode="equal">Dividir en partes iguales</button>
+        <button type="button" data-account-mode="single">Unificar cuenta</button>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Resumen demostrativo del turno">
+      <article><span>Mesas activas</span><strong>8</strong><small>de 12 mesas</small></article>
+      <article><span>Pedidos abiertos</span><strong id="open-orders-count">3</strong><small>en preparación o listos</small></article>
+      <article><span>Solicitudes</span><strong id="requests-count">3</strong><small>requieren atención</small></article>
+      <article><span>Cobros pendientes</span><strong id="payments-count">2</strong><small>datos demostrativos</small></article>
+      <article><span>Instantáneas pendientes</span><strong id="snapshots-pending-count">0</strong><small>guardadas en este navegador</small></article>
+    </section>
+
+    <div class="operation-grid">
+      <section class="panel-card" aria-labelledby="requests-title">
+        <div class="card-heading">
+          <div><p class="eyebrow">Atención de sala</p><h2 id="requests-title">Solicitudes</h2></div>
+          <span class="count-badge" id="requests-badge">3 pendientes</span>
+        </div>
+        <div class="request-list">
+          <article class="request-row priority" data-request>
+            <div class="table-number">07</div>
+            <div><strong>Pedir la cuenta</strong><span class="request-state">Pendiente · recién</span></div>
+            <button type="button" class="resolve-request">Marcar atendida</button>
+          </article>
+          <article class="request-row" data-request>
+            <div class="table-number">03</div>
+            <div><strong>Cubiertos o servilletas</strong><span class="request-state">Pendiente · hace 2 min</span></div>
+            <button type="button" class="resolve-request">Marcar atendida</button>
+          </article>
+          <article class="request-row" data-request>
+            <div class="table-number">11</div>
+            <div><strong>Consultar por un plato</strong><span class="request-state">Pendiente · hace 4 min</span></div>
+            <button type="button" class="resolve-request">Marcar atendida</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel-card" aria-labelledby="orders-title">
+        <div class="card-heading">
+          <div><p class="eyebrow">Comandas</p><h2 id="orders-title">Pedidos abiertos</h2></div>
+          <span class="count-badge">Flujo simulado</span>
+        </div>
+        <div class="order-list">
+          <article class="kitchen-order" data-order data-state="kitchen">
+            <div><span class="order-table">Mesa 04</span><strong>2 milanesas · 1 limonada</strong><small>Aviso: sin mayonesa</small></div>
+            <div class="order-actions"><span class="order-state kitchen">En preparación</span><button type="button" class="advance-order">Marcar listo</button></div>
+          </article>
+          <article class="kitchen-order" data-order data-state="ready">
+            <div><span class="order-table">Mesa 02</span><strong>6 empanadas · 2 bebidas</strong><small>Sin avisos de alergias</small></div>
+            <div class="order-actions"><span class="order-state ready">Listo para servir</span><button type="button" class="advance-order">Marcar entregado</button></div>
+          </article>
+          <article class="kitchen-order" data-order data-state="kitchen">
+            <div><span class="order-table">Mesa 09</span><strong>1 locro · 1 limonada</strong><small class="allergy-note">Alergia informada: leche</small></div>
+            <div class="order-actions"><span class="order-state kitchen">En preparación</span><button type="button" class="advance-order">Marcar listo</button></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="business-grid business-grid--single">
+      <section class="panel-card" aria-labelledby="payments-title">
+        <div class="card-heading">
+          <div><p class="eyebrow">Cierre de mesas</p><h2 id="payments-title">Cobros</h2></div>
+          <span class="count-badge" id="payments-badge">2 pendientes</span>
+        </div>
+        <div class="payment-queue">
+          <article class="payment-row" data-payment>
+            <div class="table-number">07</div>
+            <div><strong>Efectivo · $29.000</strong><span class="payment-row-state">Mozo solicitado · demo</span></div>
+            <button type="button" class="confirm-payment">Confirmar cobro</button>
+          </article>
+          <article class="payment-row" data-payment>
+            <div class="table-number">05</div>
+            <div><strong>Transferencia · $18.600</strong><span class="payment-row-state">Comprobante recibido · demo</span></div>
+            <button type="button" class="confirm-payment">Validar transferencia</button>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="moderation-card" aria-labelledby="moderation-title">
+      <div class="moderation-heading">
+        <div>
+          <p class="eyebrow">Contenido de clientes · guardado local</p>
+          <h2 id="moderation-title">Moderación de Instantáneas</h2>
+          <p>Revisá la foto y el texto antes de decidir si aparecen en la carta.</p>
+        </div>
+        <span class="count-badge" id="moderation-pending-badge">0 pendientes</span>
+      </div>
+      <div class="moderation-notice"><strong>Demostración:</strong> estos cambios sólo afectan este navegador. En una instalación real, las imágenes se almacenan de forma segura y son moderadas por el bar.</div>
+      <div class="moderation-filters" role="tablist" aria-label="Filtrar instantáneas">
+        <button type="button" role="tab" aria-selected="true" data-snapshot-filter="pending">Pendientes</button>
+        <button type="button" role="tab" aria-selected="false" data-snapshot-filter="approved">Publicadas</button>
+        <button type="button" role="tab" aria-selected="false" data-snapshot-filter="rejected">Rechazadas</button>
+      </div>
+      <div class="moderation-grid" id="moderation-grid" aria-live="polite" aria-busy="true"></div>
+      <p class="moderation-status" id="moderation-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel-card feedback-overview feedback-overview--secondary" aria-labelledby="feedback-overview-title">
+      <div><p class="eyebrow">Opiniones demostrativas</p><h2 id="feedback-overview-title">Experiencia del cliente</h2></div>
+      <div class="rating-summary"><strong>4,8</strong><div><span aria-label="5 de 5 estrellas">★★★★★</span><small>12 reseñas ficticias</small></div></div>
+      <div class="feedback-tags"><span>Atención rápida · 7</span><span>Carta clara · 4</span><span>Revisar demoras · 1</span></div>
+      <p>En una versión real, este bloque agrupará temas frecuentes para ayudar al dueño a decidir qué mejorar.</p>
+    </section>
+
+    <p class="prototype-note"><strong>Alcance actual:</strong> todos los datos, comensales, estados y cobros de este panel son demostrativos. La versión operativa deberá conectar cada QR con una sesión activa, conservar estados y notificar al personal.</p>
+  </main>
+  <div class="toast" id="panel-toast" role="status" aria-live="polite"></div>
+  <script src="site-config.js?v=20260921a"></script>
+  <script src="apply-site-config.js?v=20260918a"></script>
+  <script src="snapshots-db.js?v=20260921a"></script>
+  <script src="panel.js?v=20260916c"></script>
+  <script src="experience-widgets.js?v=20260918b"></script>
+  <script src="accessibility-bar.js?v=20260921a"></script>
+</body>
+</html>

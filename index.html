@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1b2118">
+  <meta name="description" content="Una experiencia gastronómica demostrativa inspirada en la tradición de San Pedro de Colalao.">
+  <title>La Posta del Valle · Tradición en San Pedro de Colalao</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2118'/%3E%3Cpath d='M18 47V17h8v23h20v7z' fill='%2311d9e7'/%3E%3Cpath d='M32 17h14v7H32z' fill='%23f6efe3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="brand-foundation.css?v=20260918a">
+  <link rel="stylesheet" href="landing.css?v=20260921a">
+  <link rel="stylesheet" href="experience-widgets.css?v=20260918b">
+  <link rel="stylesheet" href="accessibility-bar.css?v=20260921a">
+</head>
+<body data-page="landing">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="demo-strip">DEMO ADAPTABLE · IDENTIDAD, DATOS Y PRECIOS ILUSTRATIVOS</div>
+  <header class="landing-header" id="inicio">
+    <a class="landing-brand" href="#inicio" aria-label="La Posta del Valle, volver al inicio" data-config-brand-label>
+      <span class="brand-mark" aria-hidden="true" data-config="identity.mark">LP</span>
+      <span><strong data-config="identity.primaryName">La Posta</strong><small><span data-config="identity.secondaryName">del Valle</span> · demo</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="landing-nav"><span class="sr-only">Abrir navegación</span><span aria-hidden="true">Menú</span></button>
+    <nav class="landing-nav" id="landing-nav" aria-label="Navegación principal">
+      <a href="#sabores">Sabores</a><a href="#momentos">Momentos</a><a href="#encuentro">Encuentro</a>
+      <button type="button" class="text-action js-open-booking">Reservar</button>
+      <a class="nav-cta" href="carta.html">Ver la carta</a>
+    </nav>
+  </header>
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/villa-hero.webp" alt="Galería gastronómica genérica junto a una plaza arbolada al atardecer" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-kicker">San Pedro de Colalao · propuesta demostrativa</p>
+        <h1 id="hero-title" data-config="identity.tagline">Una tradición en San Pedro de Colalao</h1>
+        <p class="hero-lead">Sabores conocidos, tiempo para compartir y una atención más simple desde que llegás hasta que pedís la cuenta.</p>
+        <div class="hero-actions"><a class="button button-primary" href="carta.html">Abrir la carta</a><button class="button button-ghost js-open-booking" type="button">Reservar una mesa</button></div>
+      </div>
+      <div class="hero-status" aria-label="Información demostrativa del establecimiento"><span><b aria-hidden="true"></b> Abierto hoy</span><span>Desayuno · almuerzo · merienda · cena</span></div>
+    </section>
+    <section class="service-ribbon" aria-label="Servicios destacados">
+      <article><span aria-hidden="true">01</span><div><strong>Carta desde la mesa</strong><small>Escaneá, elegí y revisá antes de pedir.</small></div></article>
+      <article><span aria-hidden="true">02</span><div><strong>Atención cuando la necesitás</strong><small>Pedí ayuda sin perder el encuentro.</small></div></article>
+      <article><span aria-hidden="true">03</span><div><strong>Cuenta clara</strong><small>Paguen juntos o cada uno lo suyo.</small></div></article>
+    </section>
+    <section class="weather-carousel" data-weather-carousel data-weather-context="landing" aria-labelledby="weather-landing-title">
+      <div class="weather-carousel__heading">
+        <div><p class="eyebrow">El clima también abre el apetito · demo</p><h2 id="weather-landing-title">¿Qué combina con este momento?</h2></div>
+        <p>Recomendaciones ilustrativas que un bar puede adaptar según la temperatura, la hora y su carta disponible.</p>
+      </div>
+      <div class="weather-carousel__viewport"><div class="weather-carousel__track" data-weather-track></div></div>
+      <div class="weather-carousel__footer">
+        <div class="weather-carousel__controls"><button class="weather-carousel__control" type="button" aria-label="Recomendación anterior" data-weather-prev>←</button><button class="weather-carousel__control" type="button" aria-label="Recomendación siguiente" data-weather-next>→</button></div>
+        <div class="weather-carousel__dots" data-weather-dots aria-label="Elegir recomendación"></div>
+        <span class="weather-carousel__note">Clima y temperaturas ilustrativos</span>
+      </div>
+      <p class="sr-only" aria-live="polite" data-weather-status></p>
+    </section>
+    <section class="story-section" id="sabores" aria-labelledby="story-title">
+      <div class="story-image-wrap"><img src="assets/sabores-regionales.webp" alt="Mesa demostrativa con empanadas, humita, quesillo, cayote y nueces" loading="lazy"><p>Imágenes creadas para esta demostración. No representan platos de un comercio real.</p></div>
+      <div class="story-copy">
+        <p class="eyebrow">Sabores de acá</p><h2 id="story-title">Recetas que acompañan el paseo, la charla y la vuelta a casa.</h2>
+        <p>Una propuesta inspirada en la mesa norteña: empanadas, humita, pastas, meriendas y platos para compartir. Cada establecimiento puede contar su propia historia sin perder la sencillez de la experiencia.</p>
+        <ul class="ingredient-list" aria-label="Productos regionales destacados"><li><span>Maíz</span></li><li><span>Nuez</span></li><li><span>Cayote</span></li><li><span>Quesillo</span></li></ul>
+        <a class="inline-link" href="carta.html#carta">Conocer la carta demostrativa <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="moments-section" id="momentos" aria-labelledby="moments-title">
+      <div class="section-intro"><div><p class="eyebrow">Todo el día</p><h2 id="moments-title">Siempre hay un momento para encontrarse.</h2></div><p id="daypart-copy">La experiencia cambia con la hora, pero la mesa sigue siendo el centro.</p></div>
+      <div class="moment-grid">
+        <article><time datetime="08:00">08:00</time><div><p class="eyebrow">Mañana</p><h3>Desayuno tranquilo</h3><p>Café, pan casero y algo rico antes de empezar el paseo.</p></div></article>
+        <article><time datetime="13:00">13:00</time><div><p class="eyebrow">Mediodía</p><h3>Sabores regionales</h3><p>Platos abundantes para compartir en familia o con amigos.</p></div></article>
+        <article><time datetime="18:00">18:00</time><div><p class="eyebrow">Tarde</p><h3>Merienda en la villa</h3><p>Una pausa dulce cuando baja el sol y vuelve el movimiento.</p></div></article>
+        <article><time datetime="21:30">21:30</time><div><p class="eyebrow">Noche</p><h3>Cena y encuentro</h3><p>Luces cálidas, sobremesa y tiempo para quedarse un rato más.</p></div></article>
+      </div>
+    </section>
+    <section class="menu-preview" aria-labelledby="menu-preview-title">
+      <div class="menu-preview-copy"><p class="eyebrow">Hoy en la casa · ejemplo</p><h2 id="menu-preview-title">Conocido, generoso y bien servido.</h2><p>Productos y precios ilustrativos para mostrar cómo cada bar puede ordenar, destacar y actualizar su propuesta.</p><a class="button button-dark" href="carta.html">Ver carta completa</a></div>
+      <div class="chalk-menu" aria-label="Selección demostrativa de platos">
+        <article><div><strong>Empanada tucumana</strong><small>Carne cortada, huevo y verdeo</small></div><b>$1.200</b></article>
+        <article><div><strong>Humita en olla</strong><small>Maíz, zapallo y queso</small></div><b>$8.900</b></article>
+        <article><div><strong>Milanesa con papas</strong><small>Clásica, casera y abundante</small></div><b>$11.400</b></article>
+        <article><div><strong>Quesillo con cayote</strong><small>Postre regional con nueces</small></div><b>$5.200</b></article><p>Los valores y recetas son demostrativos.</p>
+      </div>
+    </section>
+    <section class="encounter-section" id="encuentro" aria-labelledby="encounter-title">
+      <div class="encounter-heading"><p class="eyebrow">La mesa primero</p><h2 id="encounter-title">La tecnología acompaña. El encuentro sigue siendo humano.</h2></div>
+      <div class="encounter-grid"><article><span aria-hidden="true">✦</span><h3>Elegir sin apuro</h3><p>Fotos, ingredientes y categorías claras para decidir mejor.</p></article><article><span aria-hidden="true">✋</span><h3>Pedir atención</h3><p>El mozo recibe el aviso y vuelve a la mesa cuando hace falta.</p></article><article><span aria-hidden="true">◌</span><h3>Compartir la cuenta</h3><p>Cada persona puede pedir lo suyo y decidir cómo pagar al final.</p></article></div>
+    </section>
+    <section class="events-section" aria-labelledby="events-title">
+      <div><p class="eyebrow">Agenda demostrativa</p><h2 id="events-title">Comidas, música y momentos que vuelven.</h2></div>
+      <div class="event-list"><article><time datetime="2026-01-17"><b>17</b><span>ENE</span></time><div><small>Noche de verano</small><h3>Música en vivo</h3><p>Propuesta ilustrativa · confirmar con el establecimiento.</p></div><button type="button" class="event-action js-open-booking">Consultar</button></article><article><time datetime="2026-01-25"><b>25</b><span>ENE</span></time><div><small>Sabores de la villa</small><h3>Menú regional</h3><p>Propuesta ilustrativa · cupos y menú a definir.</p></div><button type="button" class="event-action js-open-booking">Consultar</button></article></div>
+    </section>
+    <section class="visit-section" aria-labelledby="visit-title">
+      <div><p class="eyebrow">Visitanos</p><h2 id="visit-title">Tu próxima mesa puede estar en San Pedro.</h2><p>La ubicación, los horarios y los medios de contacto se personalizan cuando el establecimiento se suma.</p></div>
+      <dl><div><dt>Ubicación</dt><dd data-config="location.display">San Pedro de Colalao, Tucumán</dd></div><div><dt>Horario de muestra</dt><dd data-config="service.schedule">Todos los días · 08:00 a 00:00</dd></div><div><dt>Contacto</dt><dd data-config="contact.display">Se configura para cada bar</dd></div></dl>
+      <div class="visit-actions"><button class="button button-primary js-open-booking" type="button">Preparar una reserva</button><button class="button button-outline" id="whatsapp-demo" type="button">Consultar por WhatsApp</button><p id="contact-status" role="status" aria-live="polite"></p></div>
+    </section>
+  </main>
+  <footer class="landing-footer"><div><strong data-config="identity.name">La Posta del Valle</strong><span>Identidad demostrativa para bares de San Pedro de Colalao.</span></div><nav aria-label="Enlaces de demostración"><a href="carta.html">Carta</a><a href="panel.html">Equipo</a><a href="dueno.html">Dueño</a></nav><p>Tecnología por <b>Kynary X</b> · Soluciones digitales para problemas reales.</p></footer>
+  <dialog id="booking-dialog">
+    <form method="dialog" class="booking-card" id="booking-form"><button class="dialog-close" value="cancel" aria-label="Cerrar">×</button><p class="eyebrow">Reserva demostrativa</p><h2>Preparemos tu mesa</h2><p>Este formulario muestra la experiencia. No envía datos ni reserva una mesa real.</p><div class="booking-fields"><label>Nombre<input id="booking-name" type="text" autocomplete="name" required placeholder="Tu nombre"></label><label>Personas<select id="booking-guests" required><option value="">Elegí</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6 o más</option></select></label><label>Fecha<input id="booking-date" type="date" required></label><label>Hora<select id="booking-time" required><option value="">Elegí</option><option>12:30</option><option>13:30</option><option>20:30</option><option>21:30</option></select></label></div><button class="button button-primary" type="submit">Preparar reserva de prueba</button><p id="booking-status" role="status" aria-live="polite"></p></form>
+  </dialog>
+  <script src="site-config.js?v=20260921a"></script><script src="apply-site-config.js?v=20260918a"></script><script src="landing.js?v=20260921a"></script><script src="experience-widgets.js?v=20260918b"></script><script src="accessibility-bar.js?v=20260921a"></script>
+</body>
+</html>

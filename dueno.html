@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#13100d">
+  <meta name="description" content="Panel demostrativo del dueño para analizar ventas, demanda, menú y promociones.">
+  <title>La Posta del Valle · Panel del dueño demo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313100d'/%3E%3Cpath d='M16 18h32v6H16zm4 11h24l-3 20H23z' fill='%2311d9e7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dueno.css?v=20260916c">
+  <link rel="stylesheet" href="experience-widgets.css?v=20260918b">
+  <link rel="stylesheet" href="brand-foundation.css?v=20260918a">
+  <link rel="stylesheet" href="accessibility-bar.css?v=20260921a">
+</head>
+<body data-page="owner">
+  <div class="demo-strip">PANEL DEL DUEÑO · MÉTRICAS, COSTOS Y RECOMENDACIONES FICTICIAS</div>
+  <header class="owner-topbar">
+    <a class="brand" href="carta.html?mesa=07" aria-label="Volver a la carta"><span class="brand-mark" data-config="identity.mark">LP</span><span><strong data-config="identity.primaryName">La Posta</strong><small>Panel del dueño</small></span></a>
+    <nav aria-label="Cambiar de vista"><a href="panel.html">Panel del mozo</a><a href="configuracion.html">QR de mesas</a><a href="carta.html?mesa=07">Carta del cliente</a></nav>
+  </header>
+
+  <main>
+    <section class="owner-heading">
+      <div><p class="eyebrow">Decisiones comerciales · prototipo</p><h1>Lo importante, sin perderse en números</h1><p>Una lectura demostrativa del turno, el menú y las oportunidades de venta. Ningún dato pertenece a un comercio real.</p></div>
+      <div class="period-switch" role="group" aria-label="Período de análisis"><button class="active" data-period="hoy">Hoy</button><button data-period="semana">7 días</button><button data-period="mes">30 días</button></div>
+    </section>
+
+    <section class="owner-metrics" aria-label="Indicadores demostrativos">
+      <article><span>Ventas estimadas</span><strong id="metric-sales">$684.200</strong><small id="metric-sales-note">+12% vs. martes anterior</small></article>
+      <article><span>Ticket por comensal</span><strong id="metric-ticket">$13.420</strong><small>51 comensales simulados</small></article>
+      <article><span>Margen estimado</span><strong id="metric-margin">61%</strong><small>Con costos cargados de ejemplo</small></article>
+      <article><span>Mesas atendidas</span><strong id="metric-tables">18</strong><small>Rotación media: 1 h 18 min</small></article>
+    </section>
+
+    <section class="decision-brief" aria-labelledby="brief-title">
+      <div><p class="eyebrow">Lectura automática · ejemplo</p><h2 id="brief-title">Tres decisiones para hoy</h2></div>
+      <ol>
+        <li><span>01</span><div><strong>Impulsar limonada con minutas</strong><p>Aparece en 4 de cada 10 pedidos de milanesa y conserva buen margen.</p></div><b>Impacto alto</b></li>
+        <li><span>02</span><div><strong>Preparar más locro antes de las 13:00</strong><p>La demanda ilustrativa sube en días frescos y fines de semana.</p></div><b>Evita faltantes</b></li>
+        <li><span>03</span><div><strong>Revisar la hamburguesa completa</strong><p>Es muy pedida, pero el costo de ejemplo reduce su margen frente a otras minutas.</p></div><b>Revisar costo</b></li>
+      </ol>
+    </section>
+
+    <div class="analytics-grid">
+      <section class="owner-card sales-card" aria-labelledby="sales-title">
+        <div class="card-heading"><div><p class="eyebrow">Demanda por franja</p><h2 id="sales-title">Cuándo se llena el salón</h2></div><span>Datos simulados</span></div>
+        <div class="hour-chart" aria-label="Gráfico demostrativo de demanda por horario">
+          <div style="--bar:34%"><b>12</b><span></span><small>34%</small></div><div style="--bar:68%"><b>13</b><span></span><small>68%</small></div><div style="--bar:82%"><b>14</b><span></span><small>82%</small></div><div style="--bar:26%"><b>19</b><span></span><small>26%</small></div><div style="--bar:74%"><b>20</b><span></span><small>74%</small></div><div style="--bar:96%"><b>21</b><span></span><small>96%</small></div><div style="--bar:62%"><b>22</b><span></span><small>62%</small></div>
+        </div>
+        <p class="card-note">La proyección real podría incorporar día, temporada turística, clima, reservas y eventos locales.</p>
+      </section>
+
+      <section class="owner-card association-card" aria-labelledby="association-title">
+        <div class="card-heading"><div><p class="eyebrow">Afinidad de productos</p><h2 id="association-title">Qué suelen pedir juntos</h2></div><span>Ejemplo matemático</span></div>
+        <div class="association-list">
+          <article><strong>Milanesa + limonada</strong><span>40% de coincidencia</span><i style="--match:40%"></i></article>
+          <article><strong>Locro + empanada</strong><span>34% de coincidencia</span><i style="--match:34%"></i></article>
+          <article><strong>Hamburguesa + bebida</strong><span>29% de coincidencia</span><i style="--match:29%"></i></article>
+        </div>
+        <p class="card-note">Estas relaciones sirven para sugerir complementos; no prueban por sí solas que una recomendación aumente ventas.</p>
+      </section>
+    </div>
+
+    <section class="menu-science" aria-labelledby="menu-science-title">
+      <div class="menu-science-copy"><p class="eyebrow">Ingeniería de menú · demostración</p><h2 id="menu-science-title">Popularidad y margen en una sola mirada</h2><p>El dueño puede distinguir qué conviene destacar, ajustar o reformular. Los costos y cantidades son completamente ilustrativos.</p></div>
+      <div class="menu-matrix" role="img" aria-label="Matriz demostrativa de productos por popularidad y margen">
+        <div class="matrix-quadrant star"><small>Popularidad alta · margen alto</small><strong>Estrellas</strong><span>Limonada</span><span>Empanadas</span></div>
+        <div class="matrix-quadrant workhorse"><small>Popularidad alta · margen bajo</small><strong>Caballitos de batalla</strong><span>Hamburguesa</span></div>
+        <div class="matrix-quadrant puzzle"><small>Popularidad baja · margen alto</small><strong>Oportunidades</strong><span>Postre regional</span></div>
+        <div class="matrix-quadrant review"><small>Popularidad baja · margen bajo</small><strong>Revisar</strong><span>Plato estacional</span></div>
+      </div>
+    </section>
+
+    <div class="business-grid">
+      <section class="owner-card" aria-labelledby="campaign-title">
+        <div class="card-heading"><div><p class="eyebrow">Promociones y premios</p><h2 id="campaign-title">Campañas activas</h2></div><span>Configuración demo</span></div>
+        <div class="campaign-list">
+          <article><div><strong>Ruleta fin de semana</strong><small>1 giro por ticket · 42 premios disponibles</small></div><button type="button" class="campaign-toggle active" aria-pressed="true">Activa</button></article>
+          <article><div><strong>Cumpleaños en grupo</strong><small>Desde 8 personas · beneficio ilustrativo</small></div><button type="button" class="campaign-toggle active" aria-pressed="true">Activa</button></article>
+          <article><div><strong>Menú para escuelas</strong><small>Consulta previa · cupo por horario</small></div><button type="button" class="campaign-toggle" aria-pressed="false">Pausada</button></article>
+        </div>
+      </section>
+
+      <section class="owner-card" aria-labelledby="booking-title">
+        <div class="card-heading"><div><p class="eyebrow">Próximas reservas</p><h2 id="booking-title">Demanda anticipada</h2></div><span>3 ejemplos</span></div>
+        <div class="booking-list"><article><time>Vie · 21:30</time><strong>Martín · 4 personas</strong><small>Aniversario</small></article><article><time>Sáb · 13:30</time><strong>Escuela Belgrano · 24 personas</strong><small>Menú grupal pendiente</small></article><article><time>Sáb · 21:00</time><strong>Carla · 10 personas</strong><small>Cumpleaños</small></article></div>
+      </section>
+    </div>
+
+    <section class="scenario-card" aria-labelledby="scenario-title">
+      <div><p class="eyebrow">Simulador simple</p><h2 id="scenario-title">¿Qué pasa si cambia un precio?</h2><p>Probá un escenario demostrativo. El cálculo usa margen de contribución: precio menos costo variable.</p></div>
+      <form id="scenario-form"><label>Precio<input id="scenario-price" type="number" min="0" step="100" value="12500"></label><label>Costo variable<input id="scenario-cost" type="number" min="0" step="100" value="6100"></label><label>Unidades estimadas<input id="scenario-units" type="number" min="1" step="1" value="38"></label><button type="submit">Calcular escenario</button></form>
+      <div class="scenario-result" id="scenario-result"><span>Venta proyectada <strong>$475.000</strong></span><span>Margen proyectado <strong>$243.200</strong></span><span>Margen unitario <strong>51,2%</strong></span></div>
+    </section>
+
+    <p class="prototype-note"><strong>Transparencia:</strong> todo este panel es una simulación comercial. Para producir recomendaciones reales habría que cargar costos, registrar pedidos históricos y validar cada acción contra una línea base.</p>
+  </main>
+  <div class="toast" id="owner-toast" role="status" aria-live="polite"></div>
+  <script src="site-config.js?v=20260921a"></script>
+  <script src="apply-site-config.js?v=20260918a"></script>
+  <script src="dueno.js?v=20260916c"></script>
+  <script src="experience-widgets.js?v=20260918b"></script>
+  <script src="accessibility-bar.js?v=20260921a"></script>
+</body>
+</html>

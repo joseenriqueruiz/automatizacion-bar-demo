@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#13100d">
+  <meta name="description" content="Prototipo demostrativo de carta digital y atención por QR para bares de San Pedro de Colalao.">
+  <title>La Posta del Valle · Carta digital demo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313100d'/%3E%3Cpath d='M16 18h32v6H16zm4 11h24l-3 20H23z' fill='%2311d9e7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260921a">
+  <link rel="stylesheet" href="experience-widgets.css?v=20260918b">
+  <link rel="stylesheet" href="brand-foundation.css?v=20260918a">
+  <link rel="stylesheet" href="accessibility-bar.css?v=20260921a">
+</head>
+<body data-page="menu">
+  <div class="demo-strip">PROTOTIPO · PRODUCTOS Y PRECIOS DEMOSTRATIVOS</div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Volver a la presentación">
+      <span class="brand-mark" aria-hidden="true" data-config="identity.mark">LP</span>
+      <span><strong data-config="identity.primaryName">La Posta</strong><small data-config="identity.secondaryName">del Valle</small></span>
+    </a>
+    <nav class="quick-nav" aria-label="Accesos rápidos">
+      <a href="index.html">Inicio</a>
+      <a href="#carta">Carta</a>
+      <a href="#reservas">Reservar</a>
+      <a href="#estado-pedido">Mi pedido</a>
+      <a href="#pago">Pagar</a>
+    </nav>
+    <div class="table-chip"><span>Mesa</span><strong id="table-number">07</strong></div>
+  </header>
+
+  <main id="inicio">
+    <section class="table-welcome" aria-labelledby="welcome-title">
+      <div>
+        <p class="eyebrow">Atención desde tu mesa · demo</p>
+        <h2 id="welcome-title">Hola, estás en la Mesa 07</h2>
+        <p>Elegí tus platos, avisá alergias y pedí ayuda sin esperar. Antes de enviar vas a poder revisar todo.</p>
+      </div>
+      <div class="welcome-actions">
+        <a class="primary-btn" href="#carta">Ver la carta</a>
+        <button class="secondary-btn js-open-waiter" type="button"><span aria-hidden="true">✋</span> Pedir ayuda</button>
+      </div>
+    </section>
+
+    <section class="service-now" aria-label="Información de servicio demostrativa">
+      <div><span class="service-dot" aria-hidden="true"></span><strong id="service-period">Servicio disponible</strong><small id="service-hours">Horario demostrativo · 08:00 a 00:00</small></div>
+      <a href="index.html#momentos">Ver momentos del día</a>
+    </section>
+
+    <section class="weather-carousel" data-weather-carousel data-weather-context="menu" aria-labelledby="weather-menu-title">
+      <div class="weather-carousel__heading">
+        <div><p class="eyebrow">Sugerencias por clima · demo</p><h2 id="weather-menu-title">Elegí algo para este momento</h2></div>
+        <p>El clima puede ayudar a descubrir bebidas, platos frescos o recetas calientes sin reemplazar tu elección.</p>
+      </div>
+      <div class="weather-carousel__viewport"><div class="weather-carousel__track" data-weather-track></div></div>
+      <div class="weather-carousel__footer">
+        <div class="weather-carousel__controls"><button class="weather-carousel__control" type="button" aria-label="Recomendación anterior" data-weather-prev>←</button><button class="weather-carousel__control" type="button" aria-label="Recomendación siguiente" data-weather-next>→</button></div>
+        <div class="weather-carousel__dots" data-weather-dots aria-label="Elegir recomendación"></div>
+        <span class="weather-carousel__note">Clima y temperaturas ilustrativos</span>
+      </div>
+      <p class="visually-hidden" aria-live="polite" data-weather-status></p>
+    </section>
+
+    <section class="shared-table" aria-labelledby="shared-table-title">
+      <div class="shared-table-copy">
+        <p class="eyebrow">Mesa compartida · simulación interactiva</p>
+        <h2 id="shared-table-title">Cada uno pide lo suyo. Al final deciden cómo pagar.</h2>
+        <p>Elegí un comensal para probar pedidos separados dentro de la misma Mesa 07. Todo ocurre únicamente en esta pantalla.</p>
+      </div>
+      <div class="shared-table-controls">
+        <div class="diner-switcher" role="tablist" aria-label="Comensales de la mesa">
+          <button type="button" class="diner-pill active" data-diner="vos" role="tab" aria-selected="true"><span>JR</span><strong>Vos</strong><small id="diner-total-vos">$0</small></button>
+          <button type="button" class="diner-pill" data-diner="ana" role="tab" aria-selected="false"><span>AN</span><strong>Ana</strong><small id="diner-total-ana">$11.000</small></button>
+          <button type="button" class="diner-pill" data-diner="lucas" role="tab" aria-selected="false"><span>LU</span><strong>Lucas</strong><small id="diner-total-lucas">$7.600</small></button>
+        </div>
+        <div class="shared-table-foot">
+          <p id="active-diner-copy"><strong>Estás pidiendo como Vos.</strong> Los próximos productos quedarán en tu cuenta.</p>
+          <button type="button" class="secondary-btn" id="add-diner-demo">+ Sumar amigo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="featured-copy">
+        <div class="hero-labels"><span>Recomendación regional</span><span>Para compartir</span><span>Demo</span></div>
+        <h1 id="featured-title">Mesa de sabores</h1>
+        <p class="lead">Empanadas, humita, quesillo con cayote y nueces. Una selección ilustrativa para compartir entre dos.</p>
+        <div class="price-row">
+          <strong>$14.500</strong>
+          <button class="primary-btn add-btn" data-id="tabla-regional">Agregar</button>
+        </div>
+      </div>
+      <div class="snapshot-product-anchor" id="product-tabla-regional"></div>
+      <div class="food-stage" id="food-stage" aria-label="Imagen demostrativa del producto">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="food-frame" id="food-frame">
+          <img src="assets/sabores-regionales.webp" alt="Selección regional demostrativa con empanadas, humita, quesillo, cayote y nueces">
+        </div>
+        <span class="depth-label">Mové el celular</span>
+      </div>
+    </section>
+
+    <nav class="categories" aria-label="Categorías de la carta">
+      <button class="category active" data-filter="todos">Todo</button>
+      <button class="category" data-filter="regionales">Regionales</button>
+      <button class="category" data-filter="minutas">Minutas</button>
+      <button class="category" data-filter="bebidas">Bebidas</button>
+      <button class="category" data-filter="kids">Kids</button>
+    </nav>
+
+    <section class="menu-section" id="carta" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Carta demostrativa</p>
+          <h2 id="menu-title">Elegí sin apuro</h2>
+        </div>
+        <div class="waiter-action">
+          <button class="waiter-btn js-open-waiter" id="waiter-btn" type="button">
+            <span class="waiter-hand" aria-hidden="true">✋</span>
+            <span>Llamar al mozo</span>
+          </button>
+          <p class="waiter-status" id="waiter-status" role="status" aria-live="polite">Aviso demostrativo</p>
+        </div>
+      </div>
+
+      <aside class="allergy-notice" aria-label="Información importante sobre alergias">
+        <span aria-hidden="true">!</span>
+        <p><strong>¿Tenés una alergia alimentaria?</strong> Marcala al revisar el pedido y avisale también al personal. La información de esta demo no reemplaza la confirmación de ingredientes y trazas.</p>
+      </aside>
+
+      <div class="menu-grid" id="menu-grid">
+        <article class="dish-card" id="product-empanada" data-category="regionales">
+          <img src="assets/empanadas.jpg" alt="Empanadas servidas, imagen demostrativa" loading="lazy">
+          <div><p class="dish-meta">Regionales · demo</p><h3>Empanada tucumana</h3><p>Carne cortada a cuchillo, huevo y verdeo.</p></div>
+          <footer><strong>$1.200</strong><button class="round-btn add-btn" data-id="empanada" aria-label="Agregar empanada tucumana">+</button></footer>
+        </article>
+
+        <article class="dish-card" id="product-locro" data-category="regionales">
+          <img src="assets/regional.jpg" alt="Locro argentino, imagen demostrativa" loading="lazy">
+          <div><p class="dish-meta">Regionales · demo</p><h3>Locro</h3><p>Maíz blanco, porotos, zapallo y carnes. Receta a confirmar con el bar.</p></div>
+          <footer><strong>$9.800</strong><button class="round-btn add-btn" data-id="locro" aria-label="Agregar locro">+</button></footer>
+        </article>
+
+        <article class="dish-card" id="product-milanesa-plato" data-category="minutas">
+          <div class="type-only"><span>Hecho al momento</span><b>M</b></div>
+          <div><p class="dish-meta">Minutas · demo</p><h3>Milanesa con papas</h3><p>Carne vacuna, rebozado casero y papas doradas.</p></div>
+          <footer><strong>$11.900</strong><button class="round-btn add-btn" data-id="milanesa-plato" aria-label="Agregar milanesa con papas">+</button></footer>
+        </article>
+
+        <article class="dish-card" id="product-limonada" data-category="bebidas">
+          <div class="type-only drink"><span>Jarra 1 litro</span><b>L</b></div>
+          <div><p class="dish-meta">Bebidas · demo</p><h3>Limonada de la casa</h3><p>Limón, menta, hielo y un toque de jengibre.</p></div>
+          <footer><strong>$4.200</strong><button class="round-btn add-btn" data-id="limonada" aria-label="Agregar limonada de la casa">+</button></footer>
+        </article>
+
+        <article class="dish-card kids-card" id="product-mini-milanesa" data-category="kids">
+          <div class="type-only kids"><span>Carta infantil</span><b>Mini</b></div>
+          <div><p class="dish-meta">Kids · ejemplo</p><h3>Mini milanesa</h3><p>Porción infantil con papas rústicas. Ingredientes y presentación a definir con el bar.</p></div>
+          <footer><strong>$7.900</strong><button class="round-btn add-btn" data-id="mini-milanesa" aria-label="Agregar mini milanesa">+</button></footer>
+        </article>
+
+        <article class="dish-card kids-card" id="product-pasta-kids" data-category="kids">
+          <div class="type-only kids pasta"><span>Carta infantil</span><b>Kids</b></div>
+          <div><p class="dish-meta">Kids · ejemplo</p><h3>Tirabuzones suaves</h3><p>Pasta con salsa a elección y queso aparte. Opción demostrativa para familias.</p></div>
+          <footer><strong>$6.800</strong><button class="round-btn add-btn" data-id="pasta-kids" aria-label="Agregar tirabuzones suaves">+</button></footer>
+        </article>
+      </div>
+    </section>
+
+    <details class="demo-extras" id="extras">
+      <summary>
+        <span class="eyebrow">Opcionales para explorar</span>
+        <strong>Reservas, celebraciones y premios</strong>
+        <small>Abrí este bloque para conocer funciones que no interrumpen el pedido cotidiano.</small>
+      </summary>
+      <div class="demo-extras__content">
+    <section class="occasion-section" id="promociones" aria-labelledby="occasion-title">
+      <div class="section-heading occasion-heading">
+        <div>
+          <p class="eyebrow">Momentos especiales · propuestas ilustrativas</p>
+          <h2 id="occasion-title">Una excusa para encontrarse</h2>
+          <p>Beneficios de ejemplo que el dueño podrá activar, pausar y adaptar por fecha o cantidad de personas.</p>
+        </div>
+      </div>
+      <div class="occasion-grid">
+        <article class="occasion-card school"><span class="occasion-index">01</span><p class="dish-meta">Viajes y escuelas</p><h3>Menú grupal</h3><p>Propuesta cerrada para contingentes, con bebida y alternativa infantil.</p><button type="button" class="occasion-action" data-occasion="escuelas">Consultar ejemplo</button></article>
+        <article class="occasion-card birthday"><span class="occasion-index">02</span><p class="dish-meta">Cumpleaños</p><h3>Tu mesa, tu festejo</h3><p>Beneficio demostrativo para grupos desde ocho personas y sorpresa de cortesía.</p><button type="button" class="occasion-action" data-occasion="cumpleaños">Ver beneficio</button></article>
+        <article class="occasion-card anniversary"><span class="occasion-index">03</span><p class="dish-meta">Aniversarios</p><h3>Brindis en pareja</h3><p>Reserva especial con postre para compartir. Condiciones ilustrativas.</p><button type="button" class="occasion-action" data-occasion="aniversarios">Ver propuesta</button></article>
+      </div>
+    </section>
+
+    <section class="reservation-section" id="reservas" aria-labelledby="reservation-title">
+      <div class="reservation-copy">
+        <p class="eyebrow">Reserva web · demostración</p>
+        <h2 id="reservation-title">Tu mesa puede esperarte</h2>
+        <p>Simulá una reserva antes de llegar a San Pedro de Colalao. No se envían datos ni se bloquea una mesa real.</p>
+        <ul><li>Confirmación simulada inmediata</li><li>Tolerancia ilustrativa de 15 minutos</li><li>Sin seña en esta primera propuesta</li></ul>
+      </div>
+      <form class="reservation-form" id="reservation-form">
+        <div class="reservation-fields">
+          <label>Fecha<input id="reservation-date" type="date" required></label>
+          <label>Horario<select id="reservation-time" required><option value="">Elegir</option><option>12:30</option><option>13:30</option><option>20:30</option><option>21:30</option></select></label>
+          <label>Personas<select id="reservation-guests" required><option>2</option><option>4</option><option>6</option><option>8</option><option>Grupo +10</option></select></label>
+          <label>Nombre<input id="reservation-name" type="text" maxlength="40" placeholder="Ej.: José" required></label>
+        </div>
+        <label class="reservation-note">Ocasión o detalle <span>Opcional</span><textarea id="reservation-note" rows="2" placeholder="Ej.: cumpleaños, silla para niño o viaje escolar"></textarea></label>
+        <button type="submit" class="primary-btn">Simular reserva</button>
+        <p class="reservation-status" id="reservation-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="prize-section" id="ruleta" aria-labelledby="prize-title">
+      <div class="prize-copy">
+        <p class="eyebrow">Campaña festiva · experiencia demostrativa</p>
+        <h2 id="prize-title">Después de pedir, probá tu suerte</h2>
+        <p>Una ruleta inspirada en el módulo trabajado para Kynary Retail. En la versión real, premios, cupos y probabilidades se validarían en el servidor.</p>
+        <div class="prize-rules"><span>1 giro por ticket</span><span>Premios configurables</span><span>Cupos auditables</span></div>
+        <button type="button" class="primary-btn" id="spin-wheel">Girar ruleta de prueba</button>
+        <p class="wheel-result" id="wheel-result" role="status" aria-live="polite">Resultado puramente ilustrativo.</p>
+      </div>
+      <div class="wheel-wrap">
+        <div class="wheel-pointer" aria-hidden="true"></div>
+        <div class="prize-wheel" id="prize-wheel" role="img" aria-label="Ruleta demostrativa con ocho premios"><span>PREMIOS<br>DEMO</span></div>
+        <div class="wheel-legend" aria-label="Premios ilustrativos"><span>1 · Café</span><span>2 · 10% dto.</span><span>3 · Postre</span><span>4 · Otra chance</span><span>5 · Limonada</span><span>6 · 5% dto.</span><span>7 · Empanada</span><span>8 · Sorpresa</span></div>
+      </div>
+    </section>
+      </div>
+    </details>
+
+    <section class="snapshots-section" id="instantaneas" aria-labelledby="snapshots-title">
+      <div class="snapshots-heading">
+        <div>
+          <p class="eyebrow">Instantáneas de la mesa · demostración</p>
+          <h2 id="snapshots-title">Lo que salió hoy</h2>
+          <p>Fotos compartidas desde las mesas y revisadas por el bar para ayudarte a elegir.</p>
+        </div>
+        <button class="primary-btn" id="open-snapshot-form" type="button">Compartir una instantánea</button>
+      </div>
+      <div class="snapshot-demo-notice" role="note">
+        <strong>Demostración:</strong> las instantáneas sólo se guardan en este navegador. No hay publicación pública ni sincronización con otros dispositivos.
+      </div>
+      <div class="snapshot-carousel" aria-label="Carrusel de instantáneas aprobadas">
+        <button class="snapshot-carousel__button" type="button" aria-label="Instantánea anterior" data-snapshot-prev>←</button>
+        <div class="snapshots-grid" id="snapshots-grid" aria-live="polite" aria-busy="true">
+          <p class="snapshot-loading">Preparando las instantáneas demostrativas…</p>
+        </div>
+        <button class="snapshot-carousel__button" type="button" aria-label="Instantánea siguiente" data-snapshot-next>→</button>
+      </div>
+      <p class="snapshot-status" id="snapshot-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="assistant-block" aria-labelledby="assistant-title">
+      <div class="assistant-hand" aria-hidden="true">✋</div>
+      <div>
+        <p class="eyebrow">Mozo desde la mesa · demostración</p>
+        <h2 id="assistant-title">¿Necesitás algo más?</h2>
+        <p>Podés pedir cubiertos, consultar por un plato, solicitar la cuenta o llamar al personal.</p>
+      </div>
+      <button class="primary-btn js-open-waiter" type="button">Elegir qué necesitás</button>
+    </section>
+
+    <section class="order-tracker" id="estado-pedido" aria-labelledby="tracker-title" hidden>
+      <div class="tracker-heading">
+        <div>
+          <p class="eyebrow">Seguimiento simulado</p>
+          <h2 id="tracker-title">Tu pedido de prueba</h2>
+        </div>
+        <span class="demo-badge">No conectado a cocina</span>
+      </div>
+      <p class="tracker-summary" id="tracker-summary"></p>
+      <ol class="tracker-steps" aria-label="Estado del pedido">
+        <li class="tracker-step" data-step="0"><span>1</span><div><strong>Pedido recibido</strong><small>La mesa confirmó el pedido.</small></div></li>
+        <li class="tracker-step" data-step="1"><span>2</span><div><strong>En preparación</strong><small>La cocina estaría trabajando en los platos.</small></div></li>
+        <li class="tracker-step" data-step="2"><span>3</span><div><strong>Listo para servir</strong><small>El mozo recibiría el aviso.</small></div></li>
+      </ol>
+      <button class="primary-btn tracker-payment-btn" id="open-payment-btn" type="button">Ver total y formas de pago</button>
+    </section>
+
+    <section class="payment-section" id="pago" aria-labelledby="payment-title" hidden>
+      <div class="payment-heading">
+        <div>
+          <p class="eyebrow">Cierre de la mesa · simulación</p>
+          <h2 id="payment-title">Revisá el total y elegí cómo pagar</h2>
+          <p>La propina es opcional. Ninguna de estas acciones mueve dinero real.</p>
+        </div>
+        <span class="demo-badge">Pago demostrativo</span>
+      </div>
+
+      <div class="bill-scope" role="group" aria-label="Elegir qué cuenta pagar">
+        <button type="button" class="bill-scope-option active" data-bill-scope="mine" aria-pressed="true"><strong>Pagar lo mío</strong><span id="bill-scope-mine">Cuenta de Vos</span></button>
+        <button type="button" class="bill-scope-option" data-bill-scope="equal" aria-pressed="false"><strong id="equal-split-label">Dividir en 3</strong><span>Partes iguales</span></button>
+        <button type="button" class="bill-scope-option" data-bill-scope="table" aria-pressed="false"><strong>Pagar toda la mesa</strong><span>Una sola cuenta</span></button>
+      </div>
+
+      <div class="payment-grid">
+        <article class="bill-card" aria-labelledby="bill-title">
+          <h3 id="bill-title">Resumen de la Mesa 07</h3>
+          <div class="payment-lines" id="payment-lines"></div>
+          <div class="bill-row"><span>Subtotal</span><strong id="payment-subtotal">$0</strong></div>
+          <fieldset class="tip-fieldset">
+            <legend>¿Querés dejar propina? <small>Opcional</small></legend>
+            <div class="tip-options">
+              <button type="button" class="tip-option active" data-tip="0" aria-pressed="true">Sin propina</button>
+              <button type="button" class="tip-option" data-tip="5" aria-pressed="false">5%</button>
+              <button type="button" class="tip-option" data-tip="10" aria-pressed="false">10%</button>
+              <button type="button" class="tip-option" data-tip="15" aria-pressed="false">15%</button>
+            </div>
+          </fieldset>
+          <div class="bill-row tip-row"><span>Propina</span><strong id="payment-tip">$0</strong></div>
+          <div class="bill-total"><span>Total final</span><strong id="payment-total">$0</strong></div>
+        </article>
+
+        <article class="payment-card" aria-labelledby="method-title">
+          <h3 id="method-title">Forma de pago</h3>
+          <div class="payment-methods" role="group" aria-label="Elegir forma de pago">
+            <button type="button" class="payment-method" data-method="cash" aria-pressed="false"><span aria-hidden="true">💵</span>Efectivo</button>
+            <button type="button" class="payment-method" data-method="qr" aria-pressed="false"><span aria-hidden="true">▦</span>QR</button>
+            <button type="button" class="payment-method" data-method="transfer" aria-pressed="false"><span aria-hidden="true">↗</span>Transferencia</button>
+          </div>
+
+          <div class="method-placeholder" id="method-placeholder">Elegí una forma de pago para ver el siguiente paso.</div>
+
+          <div class="method-panel" id="staff-payment-panel" hidden>
+            <div class="method-icon" aria-hidden="true">✋</div>
+            <h4 id="staff-payment-title">Llamar al mozo</h4>
+            <p id="staff-payment-copy"></p>
+            <button type="button" class="primary-btn" id="request-payment-waiter">Llamar al mozo para pagar</button>
+            <button type="button" class="secondary-btn simulate-payment-btn" id="simulate-staff-payment" hidden>Simular pago realizado</button>
+          </div>
+
+          <div class="method-panel transfer-panel" id="transfer-panel" hidden>
+            <p class="fake-data-label">Datos ficticios para el prototipo</p>
+            <dl class="bank-data">
+              <div><dt>Alias</dt><dd><strong id="demo-alias">POSTA.VALLE.DEMO</strong><button type="button" class="copy-btn" data-copy="POSTA.VALLE.DEMO">Copiar</button></dd></div>
+              <div><dt>CBU</dt><dd><strong id="demo-cbu">0000000000000000000000</strong><button type="button" class="copy-btn" data-copy="0000000000000000000000">Copiar</button></dd></div>
+              <div><dt>Titular</dt><dd>La Posta del Valle · DEMO</dd></div>
+            </dl>
+            <label class="upload-box" for="receipt-file">
+              <span aria-hidden="true">↑</span>
+              <strong>Elegir comprobante</strong>
+              <small>Imagen o PDF hasta 8 MB · sólo se previsualiza en este dispositivo</small>
+            </label>
+            <input class="visually-hidden" id="receipt-file" type="file" accept="image/*,.pdf,application/pdf">
+            <div class="receipt-preview" id="receipt-preview" hidden></div>
+            <button type="button" class="primary-btn confirm-transfer-btn" id="confirm-transfer" disabled>Registrar transferencia de prueba</button>
+          </div>
+
+          <p class="payment-status" id="payment-status" role="status" aria-live="polite"></p>
+          <p class="payment-warning"><strong>Prototipo:</strong> no procesa dinero, no valida transferencias y no guarda comprobantes.</p>
+        </article>
+      </div>
+
+      <article class="feedback-card" id="feedback-card" aria-labelledby="feedback-title" hidden>
+        <div>
+          <p class="eyebrow">Después del pago</p>
+          <h3 id="feedback-title">¿Cómo estuvo tu experiencia?</h3>
+          <p>Tu opinión ayuda al bar a detectar qué funciona y qué debería mejorar.</p>
+        </div>
+        <form id="feedback-form">
+          <fieldset class="rating-fieldset">
+            <legend>Calificación general</legend>
+            <div class="star-rating" id="star-rating">
+              <button type="button" data-rating="1" aria-label="1 estrella" aria-pressed="false">★</button>
+              <button type="button" data-rating="2" aria-label="2 estrellas" aria-pressed="false">★</button>
+              <button type="button" data-rating="3" aria-label="3 estrellas" aria-pressed="false">★</button>
+              <button type="button" data-rating="4" aria-label="4 estrellas" aria-pressed="false">★</button>
+              <button type="button" data-rating="5" aria-label="5 estrellas" aria-pressed="false">★</button>
+            </div>
+          </fieldset>
+          <label for="feedback-text">Contanos un poco más <span>Opcional</span></label>
+          <textarea id="feedback-text" rows="3" placeholder="Ej.: nos atendieron rápido y el locro estaba muy rico"></textarea>
+          <button class="primary-btn" id="submit-feedback" type="submit" disabled>Enviar reseña de prueba</button>
+          <p class="feedback-status" id="feedback-status" role="status" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="credits" aria-labelledby="credits-title">
+      <p class="eyebrow">Transparencia del prototipo</p>
+      <h2 id="credits-title">Imágenes de referencia</h2>
+      <p>La mesa regional fue creada especialmente para esta demostración y no pertenece a un establecimiento real. Locro: Horacio Cambeiro, Wikimedia Commons, licencia CC BY-SA 4.0. Empanadas: Paul Espinoza, Pexels.</p>
+      <div class="credit-links">
+        <span>Imagen regional generada para la demo</span>
+        <a href="https://www.pexels.com/photo/delicious-argentine-empanadas-in-buenos-aires-37297539/" target="_blank" rel="noreferrer">Fuente empanadas</a>
+        <a href="https://commons.wikimedia.org/wiki/File:Argentine_locro.jpg" target="_blank" rel="noreferrer">Fuente locro</a>
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">Licencia CC BY-SA 4.0</a>
+      </div>
+      <a class="staff-preview-link" href="panel.html"><span aria-hidden="true">↗</span> Ver panel demostrativo del equipo</a>
+      <a class="staff-preview-link secondary-preview-link" href="configuracion.html"><span aria-hidden="true">▦</span> Administrar QR de las mesas</a>
+      <a class="staff-preview-link secondary-preview-link" href="dueno.html"><span aria-hidden="true">∿</span> Ver panel demostrativo del dueño</a>
+    </section>
+
+    <section class="reviews-section" aria-labelledby="reviews-title">
+      <div class="reviews-heading">
+        <div><p class="eyebrow">Ejemplo de prueba social</p><h2 id="reviews-title">Lo que dirían los clientes</h2></div>
+        <span class="demo-badge">Nombres y reseñas ficticios</span>
+      </div>
+      <div class="reviews-viewport">
+        <div class="reviews-track" id="reviews-track">
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“Pedimos desde la mesa y llegó todo claro. Muy cómodo para venir en familia.”</p><strong>Ana M.</strong></article>
+          <article class="review-card"><div class="review-stars" aria-label="4 de 5 estrellas">★★★★<span>★</span></div><p>“La carta se entiende rápido y pude avisar mi alergia antes de enviar.”</p><strong>Lucas R.</strong></article>
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“Nos gustó poder pedir la cuenta sin buscar al mozo por todo el salón.”</p><strong>María C.</strong></article>
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“El seguimiento del pedido da tranquilidad y la experiencia es muy sencilla.”</p><strong>Juan P.</strong></article>
+          <article class="review-card" aria-hidden="true"><div class="review-stars">★★★★★</div><p>“Pedimos desde la mesa y llegó todo claro. Muy cómodo para venir en familia.”</p><strong>Ana M.</strong></article>
+          <article class="review-card" aria-hidden="true"><div class="review-stars">★★★★<span>★</span></div><p>“La carta se entiende rápido y pude avisar mi alergia antes de enviar.”</p><strong>Lucas R.</strong></article>
+          <article class="review-card" aria-hidden="true"><div class="review-stars">★★★★★</div><p>“Nos gustó poder pedir la cuenta sin buscar al mozo por todo el salón.”</p><strong>María C.</strong></article>
+          <article class="review-card" aria-hidden="true"><div class="review-stars">★★★★★</div><p>“El seguimiento del pedido da tranquilidad y la experiencia es muy sencilla.”</p><strong>Juan P.</strong></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="order-bar" id="order-bar" aria-live="polite">
+    <div><span id="item-count">0 productos</span><strong id="order-total">$0</strong></div>
+    <button id="review-btn" disabled>Ver pedido</button>
+  </aside>
+
+  <dialog id="order-dialog">
+    <form method="dialog" class="dialog-card">
+      <button class="close-btn" value="close" aria-label="Cerrar">×</button>
+      <p class="eyebrow" id="order-table-label">Mesa 07 · cuenta de Vos</p>
+      <h2>Revisá tu pedido</h2>
+      <div id="order-lines" class="order-lines"></div>
+      <div class="dialog-total"><span>Total demostrativo</span><strong id="dialog-total">$0</strong></div>
+      <fieldset class="allergy-fieldset">
+        <legend>¿Tenés alguna alergia alimentaria?</legend>
+        <p class="field-help">Marcá todas las opciones necesarias. El personal debe confirmar ingredientes y posibles trazas.</p>
+        <div class="allergy-options" id="allergy-options">
+          <button type="button" class="allergy-chip" data-allergen="Gluten" aria-pressed="false">Gluten</button>
+          <button type="button" class="allergy-chip" data-allergen="Leche" aria-pressed="false">Leche</button>
+          <button type="button" class="allergy-chip" data-allergen="Huevo" aria-pressed="false">Huevo</button>
+          <button type="button" class="allergy-chip" data-allergen="Maní" aria-pressed="false">Maní</button>
+          <button type="button" class="allergy-chip" data-allergen="Soja" aria-pressed="false">Soja</button>
+          <button type="button" class="allergy-chip" data-allergen="Pescado" aria-pressed="false">Pescado</button>
+          <button type="button" class="allergy-chip" data-allergen="Mariscos" aria-pressed="false">Mariscos</button>
+          <button type="button" class="allergy-chip" data-allergen="Frutos secos" aria-pressed="false">Frutos secos</button>
+          <button type="button" class="allergy-chip" data-allergen="Sulfitos o conservantes" aria-pressed="false">Sulfitos o conservantes</button>
+        </div>
+        <label for="allergy-detail">Otra alergia o detalle importante</label>
+        <textarea id="allergy-detail" rows="2" placeholder="Ej.: alergia severa al maní"></textarea>
+        <p class="allergy-warning"><strong>Importante:</strong> este aviso no garantiza ausencia de trazas. Si tu alergia es severa, hablá también con el mozo antes de consumir.</p>
+      </fieldset>
+      <label for="note">Aclaración para cocina</label>
+      <textarea id="note" rows="3" placeholder="Ej.: sin mayonesa"></textarea>
+      <button class="primary-btn send-btn" id="send-btn" value="send">Enviar pedido de prueba</button>
+      <p class="fine-print">Este prototipo no envía información a un bar real ni procesa pagos.</p>
+    </form>
+  </dialog>
+
+  <dialog id="waiter-dialog">
+    <form method="dialog" class="dialog-card">
+      <button class="close-btn" value="close" aria-label="Cerrar">×</button>
+      <p class="eyebrow" id="waiter-table-label">Mesa 07 · solicitud demostrativa</p>
+      <h2>¿Qué necesitás?</h2>
+      <p class="dialog-intro">Elegí una opción para que el personal sepa cómo ayudarte.</p>
+      <div class="service-options" id="service-options">
+        <button type="button" class="service-option" data-service="Llamar al mozo" aria-pressed="false"><span aria-hidden="true">✋</span><strong>Llamar al mozo</strong></button>
+        <button type="button" class="service-option" data-service="Traer cubiertos o servilletas" aria-pressed="false"><span aria-hidden="true">🍴</span><strong>Cubiertos o servilletas</strong></button>
+        <button type="button" class="service-option" data-service="Consultar por un plato" aria-pressed="false"><span aria-hidden="true">💬</span><strong>Consultar por un plato</strong></button>
+        <button type="button" class="service-option" data-service="Pedir la cuenta" aria-pressed="false"><span aria-hidden="true">🧾</span><strong>Pedir la cuenta</strong></button>
+      </div>
+      <label for="service-detail">Detalle opcional</label>
+      <textarea id="service-detail" rows="2" placeholder="Ej.: necesitamos dos vasos"></textarea>
+      <button class="primary-btn send-btn" id="send-service-btn" value="send" disabled>Enviar solicitud de prueba</button>
+      <p class="fine-print">En la versión real, este aviso deberá llegar al panel del personal.</p>
+    </form>
+  </dialog>
+
+  <dialog id="snapshot-dialog">
+    <form class="dialog-card snapshot-form" id="snapshot-form">
+      <button class="close-btn" id="close-snapshot-form" type="button" aria-label="Cerrar formulario">×</button>
+      <p class="eyebrow">Mesa <span id="snapshot-table-number">07</span> · envío local</p>
+      <h2>Compartí cómo llegó tu plato</h2>
+      <p class="dialog-intro">El bar debe revisarlo antes de que sea visible. No necesitás crear una cuenta.</p>
+
+      <label class="snapshot-upload" for="snapshot-file">
+        <span aria-hidden="true">＋</span>
+        <strong>Elegir una foto</strong>
+        <small>JPG, PNG o WebP · máximo 5 MB</small>
+      </label>
+      <input class="visually-hidden" id="snapshot-file" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required>
+      <div class="snapshot-preview" id="snapshot-preview" hidden>
+        <img id="snapshot-preview-image" alt="Vista previa de la instantánea elegida">
+        <div><strong id="snapshot-file-name"></strong><small id="snapshot-file-detail"></small></div>
+        <button class="secondary-btn" id="remove-snapshot-photo" type="button">Quitar foto</button>
+      </div>
+      <p class="field-error" id="snapshot-file-error" role="alert"></p>
+
+      <label for="snapshot-dish">¿Qué plato es? <span>Opcional</span></label>
+      <select id="snapshot-dish" name="dish">
+        <option value="">Sin asociar</option>
+        <option value="tabla-regional">Mesa de sabores</option>
+        <option value="empanada">Empanada tucumana</option>
+        <option value="locro">Locro</option>
+        <option value="milanesa-plato">Milanesa con papas</option>
+        <option value="limonada">Limonada de la casa</option>
+      </select>
+
+      <label for="snapshot-alias">Alias <span>Opcional · máximo 24 caracteres</span></label>
+      <input id="snapshot-alias" name="alias" type="text" maxlength="24" autocomplete="nickname" placeholder="Ej.: Familia Ruiz">
+
+      <div class="label-row"><label for="snapshot-text">Contá algo breve</label><span id="snapshot-character-count">0/120</span></div>
+      <textarea id="snapshot-text" name="text" rows="3" maxlength="120" required placeholder="Ej.: llegó bien caliente y las papas estaban crocantes"></textarea>
+
+      <p class="people-warning"><strong>¿Aparece una persona reconocible?</strong> Compartí la foto sólo si contás con su permiso.</p>
+      <label class="consent-row" for="snapshot-consent">
+        <input id="snapshot-consent" name="consent" type="checkbox" required>
+        <span>Autorizo al bar a revisar y mostrar esta foto en su carta</span>
+      </label>
+      <p class="privacy-copy">La imagen se reduce y reprocesa en tu navegador para no conservar metadatos. En esta demo no se envía a un servidor.</p>
+      <div class="snapshot-form-actions">
+        <button class="secondary-btn" id="cancel-snapshot-form" type="button">Cancelar</button>
+        <button class="primary-btn" id="submit-snapshot" type="submit">Enviar para revisión</button>
+      </div>
+      <p class="field-error" id="snapshot-form-error" role="alert"></p>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="site-config.js?v=20260921a"></script>
+  <script src="apply-site-config.js?v=20260918a"></script>
+  <script src="snapshots-db.js?v=20260921a"></script>
+  <script src="app.js?v=20260921a"></script>
+  <script src="experience-widgets.js?v=20260918b"></script>
+  <script src="accessibility-bar.js?v=20260921a"></script>
+</body>
+</html>
